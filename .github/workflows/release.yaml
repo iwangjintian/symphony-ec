@@ -3,7 +3,7 @@ name: Release
 on:
   push:
     branches:
-      - main
+      - users/jesse/release
 env:
   ContainerRegistry: "ghcr.io"
   ContainerRegistryRepo: "ghcr.io/azure"
