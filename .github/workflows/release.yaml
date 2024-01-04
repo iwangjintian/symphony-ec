@@ -1,9 +1,7 @@
 name: Release
 
 on:
-  push:
-    branches:
-      - users/jesse/release
+  workflow_dispatch:
 env:
   ContainerRegistry: "ghcr.io"
   ContainerRegistryRepo: "ghcr.io/azure"
@@ -122,7 +120,7 @@ jobs:
         uses: ad-m/github-push-action@master
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          branch: users/jesse/release
+          branch: main
 
       - name: Create Release
         id: create_release
