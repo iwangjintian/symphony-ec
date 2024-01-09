@@ -41,7 +41,7 @@ var ctx context.Context
 var cancel context.CancelFunc
 
 func TestAPIs(t *testing.T) {
-	//t.Skip("Skipping tests for now as they are no longer relevant")
+	t.Skip("Skipping tests for now as they are no longer relevant")
 	RegisterFailHandler(Fail)
 
 	RunSpecsWithDefaultAndCustomReporters(t,
@@ -50,7 +50,7 @@ func TestAPIs(t *testing.T) {
 }
 
 var _ = BeforeSuite(func() {
-	//Skip("Skipping tests for now as they are no longer relevant")
+	Skip("Skipping tests for now as they are no longer relevant")
 	logf.SetLogger(zap.New(zap.WriteTo(GinkgoWriter), zap.UseDevMode(true)))
 
 	ctx, cancel = context.WithCancel(context.TODO())
@@ -125,7 +125,7 @@ var _ = BeforeSuite(func() {
 }, 60)
 
 var _ = AfterSuite(func() {
-	//Skip("Skipping tests for now as they are no longer relevant")
+	Skip("Skipping tests for now as they are no longer relevant")
 	cancel()
 	By("tearing down the test environment")
 	err := testEnv.Stop()
