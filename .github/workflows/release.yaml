@@ -1,9 +1,7 @@
 name: Release
 
 on:
-  push:
-    branches:
-      - users/jesse/release
+  workflow_dispatch:
 env:
   ContainerRegistry: "ghcr.io"
   ContainerRegistryRepo: "ghcr.io/eclipse-symphony"
